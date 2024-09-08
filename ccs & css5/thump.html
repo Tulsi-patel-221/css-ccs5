@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Grid</title>
+    <style>
+    
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1100px;
+
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnail {
+    background-color: #333;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.buttons {
+    border: black;
+    justify-content: space-between;
+}
+
+button {
+    padding: 8px 16px;
+    color: black;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="thumbnail">Thumbnail</div>
+            <div class="content">
+                <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="buttons">
+                    <button>View</button>
+                    <button>Edit</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="thumbnail">Thumbnail</div>
+            <div class="content">
+                <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="buttons">
+                    <button>View</button>
+                    <button>Edit</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="thumbnail">Thumbnail</div>
+            <div class="content">
+                <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="buttons">
+                    <button>View</button>
+                    <button>Edit</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="thumbnail">Thumbnail</div>
+            <div class="content">
+                <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="buttons">
+                    <button>View</button>
+                    <button>Edit</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="thumbnail">Thumbnail</div>
+            <div class="content">
+                <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="buttons">
+                    <button>View</button>
+                    <button>Edit</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="thumbnail">Thumbnail</div>
+            <div class="content">
+                <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="buttons">
+                    <button>View</button>
+                    <button>Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

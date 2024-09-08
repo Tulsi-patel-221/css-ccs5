@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Example</title>
+    <style>
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "hero hero"
+        "main image"
+        "main extra"
+        "banner banner";
+    grid-template-rows: auto auto  auto auto;
+
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    background-color: navy;
+    color: white;   
+    padding: 20px;
+}
+
+.menu {
+    background-color: red;
+    padding: 20px;
+}
+
+.hero {
+    grid-area: hero;
+    background-color: lightblue;
+    padding: 116px;
+    
+}
+
+.main {
+    grid-area: main;
+    background-color: darkblue;
+    color: white;
+    padding: 30px;
+}
+
+.image {
+    grid-area: image;
+    background-color: lightcyan;
+    padding: 30px;
+}
+
+.extra {
+    grid-area: extra;
+    background-color: mediumseagreen;
+    padding: 30px;
+}
+
+.banner {
+    grid-area: banner;
+    background-color: gold;
+    padding: 30px;
+    text-align: center;
+}
+
+
+@media (max-width: 600px) {
+    body {
+        grid-template-areas: 
+            "header"
+            "hero"
+            "main"
+            "image"
+            "extra"
+            "banner";
+        grid-template-columns: 1fr;
+    }
+
+    .header, .hero, .main, .image, .extra, .banner {
+        padding: 15px;
+    }
+
+    .hero {
+        padding: 60px;
+    }
+}
+
+@media (max-width: 678px) {
+    body {
+        grid-template-areas: 
+            "header header"
+            "hero hero"
+            "main image"
+            "extra extra"
+            "banner banner";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .header, .hero, .main, .image, .extra, .banner {
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 80px;
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">HEADER</div>
+        <div class="menu">MENU</div>
+    </header>
+    <section class="hero">HERO</section>
+    <main class="main">MAIN</main>
+    <aside class="image">IMAGE</aside>
+    <aside class="extra">EXTRA</aside>
+    <footer class="banner">BANNER</footer>
+</body>
+</html>

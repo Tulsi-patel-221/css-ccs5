@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  
+    <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f6f9;
+}
+
+header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu-icon {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.pricing {
+  background-color: #eef8da;
+  color: #8cc653;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #555;
+  font-size: 16px;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+input {
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  width: 250px;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  background-color: #6e3cf2;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5631c1;
+}
+
+
+
+
+.dashboard {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 80px;
+  background-color: #1f2933;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.profile-img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.overview h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.metric {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 30%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.metric h2 {
+  font-size: 32px;
+  color: #333;
+}
+
+.metric p {
+  font-size: 14px;
+  color: #888;
+}
+
+.change {
+  font-size: 12px;
+  display: block;
+  margin-top: 10px;
+}
+
+.change.up {
+  color: green;
+}
+
+.change.down {
+  color: red;
+}
+
+.charts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chart {
+  width: 48%;
+  text-align: center;
+}
+
+.chart h3 {
+  margin-bottom: 10px;
+}
+
+.trusted-brands {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.trusted-brands h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.brands {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.brands img {
+  height: 40px;
+}
+
+.container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 800px;
+}
+
+.timeline {
+    flex: 1;
+    border-right: 1px solid #eaeaea;
+    padding-right: 20px;
+}
+
+.timeline h3 {
+    margin-bottom: 15px;
+}
+
+.event {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.event-marker {
+    width: 12px;
+    height: 12px;
+    background-color: #f4cd67;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-right: 15px;
+}
+
+.event-content {
+    color: #555;
+}
+
+.event-content h4 {
+    margin-bottom: 5px;
+}
+
+.message-box {
+  
+    padding-left: 20px;
+}
+
+.message-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.message-body {
+    margin-bottom: 20px;
+}
+
+.message-body p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.message-footer {
+    display: flex;
+    align-items: center;
+}
+
+textarea {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+    resize: none;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.section:not(:last-child) {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+}
+
+.section.active h3 {
+    color: #333;
+    font-weight: bold;
+}
+
+.section.active::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: 4px;
+    background-color: #6a3cb1;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.container2 {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: auto;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.feature {
+    margin-bottom: 20px;
+}
+
+.icon {
+    margin-bottom: 10px;
+}
+
+.icon img {
+    width: 40px;
+    height: 40px;
+}
+
+h3 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.cta-button {
+    background-color: #eae8fb;
+    color: #6a3cb1;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #d7d1f5;
+}
+
+
+
+.container3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.charts {
+    display: flex;
+    gap: 40px;
+}
+
+.chart {
+    width: 300px;
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.description h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.description p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #6555d8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cta-button:hover {
+    background-color: #5a4ac7;
+}
+
+
+
+.testimonial-section {
+    padding: 40px;
+}
+
+blockquote {
+    font-size: 18px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.user-info h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.user-info p {
+    margin: 0;
+    color: #888;
+}
+
+.stat-section {
+    background-color: #6555d8;
+    color: white;
+    padding: 40px;
+}
+
+.stat-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.app-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.app-button img {
+    width: 160px;
+}
+
+
+.footer {
+    background-color: #1b1e24;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.app-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.app-button img {
+    width: 160px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .main-content {
+    max-width: 1200px;
+    padding: 40px;
+  }
+
+  .dashboard {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .chart {
+    width: 400px;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .metrics {
+    justify-content: space-between;
+  }
+
+  .metric {
+    width: 30%;
+  }
+
+  .trusted-brands {
+    margin-top: 60px;
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  body {
+    padding: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .metrics {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .metric {
+    width: 100%;
+  }
+
+  .chart {
+    width: 100%;
+  }
+
+  .trusted-brands {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">team.flow</div>
+        <div class="menu-icon">
+          <span>MENU</span>
+        </div>
+      </header>
+    
+      <main>
+        <div class="content">
+          <div class="pricing" style="margin-top: 100px;">Get account of $59</div><br>
+          <h1>Manage the team <br>everyone wants to <br> be on</h1><br>
+          <p>Simple platform that lets you master what great managers do best, develop trust, collaborate, and drive team performance.</p><br>
+          <form>
+            <input type="email" placeholder="name@yourcompany.com" required>
+            <button type="submit">Try it free</button>
+          </form>
+        </div>
+      </main>
+
+
+
+
+      <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="profile-img">
+            <img src="user.avif" alt="User Profile">
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#"><i class="fa-regular fa-house"></i></a></li>
+              <li><a href="#"><i class="fa-light fa-chart-simple"></i></a></li>
+              <li><a href="#"><i class="fa-light fa-person"></i></a></li>
+              <li><a href="#"><i class="fa-regular fa-gear"></i></a></li>
+            </ul>
+          </nav>
+        </aside>
+    
+        <!-- Main Content -->
+        <main class="main-content">
+          <section class="overview">
+            <h1>Overview</h1>
+            <div class="metrics">
+              <div class="metric">
+                <h2>987,654</h2>
+                <p>Hours on projects</p>
+                <span class="change down">-12.3%</span>
+              </div>
+              <div class="metric">
+                <h2>789</h2>
+                <p>New projects launched</p>
+                <span class="change up">+7.89%</span>
+              </div>
+              <div class="metric">
+                <h2>321</h2>
+                <p>Company teams</p>
+                <span class="change up">+1.23%</span>
+              </div>
+            </div>
+    
+            <div class="charts">
+              <div class="chart">
+                <h3>Launched Projects</h3>
+                <img src="chart1.png" alt="Launched Projects Chart">
+              </div>
+              <div class="chart">
+                <h3>Hours Worked</h3>
+                <img src="chart2.png" alt="Hours Worked Chart">
+              </div>
+            </div>
+          </section>
+    
+          <section class="trusted-brands">
+            <h2>Trusted by over 10,000+ world's best teams</h2>
+            <div class="brands">
+              <img src="svg1.webp" alt="Google">
+              <img src="svg2.png" alt="Airbnb">
+              <img src="svg3.png" alt="Facebook">
+              <img src="svg4.png" alt="HubSpot">
+            </div>
+          </section>
+        </main>
+      </div><br><br>
+
+      <div class="container"></div>
+        <!-- Timeline Section -->
+        <div class="timeline">
+            <h3>Timeline</h3>
+            <div class="event">
+                <div class="event-marker"></div>
+                <div class="event-content">
+                    <h4>Benchmarking</h4>
+                    <p>Sent to Denise on 06/02/2020</p>
+                    <p>@Denise Can we add three more analyses?</p>
+                    <p>@Denise Create a presentation with comparison tables</p>
+                    <p>@Denise Let's set up a meeting to present to the product manager.</p>
+                </div>
+            </div>
+            <div class="event">
+                <div class="event-marker"></div>
+                <div class="event-content">
+                    <h4>Meeting reminder</h4>
+                    <p>Sent to Denise on 06/02/2020</p>
+                    <p>@Denise scheduling this conversation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Section -->
+        <div class="message-box">
+            <div class="message-header">
+                <img src="user3.png" alt="Avatar" class="avatar">
+                <div>
+                    <h4>Denise Silva</h4>
+                    <p>Product Designer</p>
+                </div>
+            </div>
+            <div class="message-body">
+                <p><strong>@Peter</strong> Thanks for review!</p>
+                <p>I will review the comments and submit a new project.</p>
+            </div>
+            <div class="message-footer">
+                <textarea placeholder="Write a message..."></textarea>
+                <button type="button">Send</button>
+            </div>
+        </div>
+    </div><br><br>
+
+    <div class="card">
+      <div class="section active">
+          <h3>Survey your team</h3>
+          <p>Powerful questions that get to the heart of how team members really feel.</p>
+      </div>
+
+      <div class="section">
+          <h3>Resolve issues quickly</h3>
+          <p>Anonymous messaging that connects managers and employees.</p>
+      </div>
+
+      <div class="section">
+          <h3>Plan your 1-on-1s</h3>
+          <p>Plan meetings together and give a stake to employees and teams.</p>
+      </div>
+
+      <div class="section">
+          <h3>Track your progress</h3>
+          <p>Easy-to-read reports and shareable results help managers and teams.</p>
+      </div>
+  </div><br><br>
+
+  <div class="container2">
+    <h2>Make your work easier</h2>
+
+    <div class="feature">
+        <div class="icon">
+            <img src="increse.png" alt="Team Surveys & Reports">
+        </div>
+        <h3>Team Surveys & Reports</h3>
+        <p>Short, anonymous surveys track your team’s needs weekly so you can focus.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">
+            <img src="bool.png" alt="Collaborative 1:1">
+        </div>
+        <h3>Collaborative 1:1</h3>
+        <p>Build relationships by planning 1-on-1s and start meetings.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">
+            <img src="learn.jpg" alt="Learning Center">
+        </div>
+        <h3>Learning Center</h3>
+        <p>Quickly get solutions tailored to your personal challenges from the manager.</p>
+    </div>
+
+    <button class="cta-button">View more benefits</button>
+</div>
+
+
+
+
+<div class="container3">
+  <div class="charts">
+      <div class="chart" id="hours-worked">
+        
+          <canvas id="hoursWorkedChart"></canvas>
+          <img src="chart2.png" alt="">
+      </div>
+      <div class="chart" id="launched-projects">
+          
+          <canvas id="launchedProjectsChart"></canvas>
+          <img src="chart1.png" alt="">
+      </div>
+  </div>
+
+  <div class="description">
+      <h2>We work how you work everyday</h2>
+      <p>Since the easiest things to use actually get used, we adapt to the way your team works – not the other way around.</p>
+      <a href="#" class="cta-button">Get started free</a>
+  </div>
+</div><br><br>
+
+
+
+
+<div class="testimonial-section">
+
+  <h2>Why  customers love working with us</h2>
+  <blockquote>
+      "It's amazing what has helped me learn about my team.<br> I don't worry about blindspots anymore,<br> and 1-on-1s have never been more productive.<br> The team loves it."
+  </blockquote>
+  <div class="user-info">
+      <img src="corporate.png" alt="User Photo" class="user-photo">
+      <div>
+          <h4>Jorge Robertson</h4>
+          <p>CS at Google</p>
+      </div>
+  </div>
+</div>
+
+<div class="stat-section">
+  <h2>84% of employees who use <br> trust their direct manager</h2>
+  <div class="app-buttons">
+      <a href="#" class="app-button google-play">
+          <img src="google play.png" >
+      </a>
+      <a href="#" class="app-button app-store">
+          <img src="apple.png" >
+      </a>
+  </div>
+</div><br><br>
+
+
+ <!-- Footer Section -->
+ <footer class="footer">
+  <div class="footer-links">
+      <div class="footer-column">
+          <h3>Company</h3>
+          <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-column">
+          <h3>Support</h3>
+          <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQs</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-column">
+          <h3>Legal</h3>
+          <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Security</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-column">
+          <h3>Install App</h3>
+          <div class="app-buttons">
+              <a href="#" class="app-button google-play">
+                  <img src="google play.png" alt="Google Play">
+              </a>
+              <a href="#" class="app-button app-store">
+                  <img src="apple.png" alt="App Store">
+              </a>
+          </div>
+      </div>
+  </div>
+
+  <div class="footer-bottom">
+      <p>&copy; 2020 - All rights reserved</p>
+  </div>
+</footer>
+
+</body>
+</html>

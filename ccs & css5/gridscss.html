@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: auto;
+  width: auto;
+}
+
+.navbar {
+  height: auto;
+  width: 20px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 20px;
+  margin-right: 20px;
+  margin-top: -500px;
+}
+
+.icon {
+  display: flex;
+  gap: 15px;
+}
+
+.container {
+  height: auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 20px;
+
+  > div {
+    height: 200px;
+    border: 2px solid black;
+  }
+}
+
+.sub1 {
+  background-image: url(img1.avif);
+  background-position: bottom;
+  background-size: cover;
+  grid-row: 1;
+  grid-column: 1/ span 4;
+}
+
+.sub2 {
+  background-image: url(img2.avif);
+  background-position: center;
+  background-size: cover;
+  grid-row: 1;
+  grid-column: 5/ span 2;
+}
+
+.sub3 {
+  background-image: url(img3.avif);
+  background-position: center;
+  background-size: cover;
+  grid-row: 2;
+}
+
+.sub4 {
+  background-image: url(img4.avif);
+  background-position: center;
+  background-size: cover;
+  grid-row: 2;
+  grid-column: 2/ span 4;
+}
+
+.sub5 {
+  background-image: url(img5.jpg);
+  background-position: center;
+  background-size: cover;
+  grid-row: 2;
+}
+
+.sub6 {
+  background-image: url(img6.avif);
+  background-position: center;
+  background-size: cover;
+  grid-row: 3;
+  grid-column: 1/ span 3;
+}
+
+.sub7 {
+  background-image: url(img7.avif);
+  background-position: top;
+  background-size: cover;
+  grid-row: 3;
+  grid-column: 4/ span 3;
+}
+
+.sub8 {
+  background-image: url(img8.avif);
+  background-position: top;
+  background-size: cover;
+  grid-row: 4;
+  grid-column: 1/ span 2;
+}
+
+.sub9 {
+  background-image: url(img9.avif);
+  background-position: center;
+  background-size: cover;
+  grid-row: 4;
+  grid-column: 3/ span 2;
+}
+
+.sub10 {
+  background-image: url(img10.avif);
+  background-position: bottom;
+  background-size: cover;
+  grid-row: 4;
+  grid-column: 5/ span 2;
+}
+
+    </style>
+</head>
+<body>
+    <div class="text">
+        <div class="container">
+       <div class="sub1"></div>
+       <div class="sub2"></div>
+       <div class="sub3"></div>
+       <div class="sub4"></div>
+       <div class="sub5"></div>
+       <div class="sub6"></div>
+       <div class="sub7"></div>
+       <div class="sub8"></div>
+       <div class="sub9"></div>
+       <div class="sub10"></div>
+       </div>
+       <div class="navbar">
+          <h2>Shutter</h2>
+          <span style="color: orange;">Home</span>
+          <span>Photos</span>
+          <span>Bio</span>
+          <span>Blog</span>
+          <span>Contact</span>
+  
+          <div class="icon">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-instagram"></i>
+          </div>
+       </div>
+       </div>
+  
+</body>
+</html>

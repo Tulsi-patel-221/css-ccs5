@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .image-side,
+    .content-side {
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-side {
+        background-color: #f4f4f4;
+        overflow: hidden;
+    }
+
+    .image-side img {
+        max-width: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .content-side {
+        background-color: #342b2b;
+        padding: 20px;
+    }
+
+    .content-side h3{
+        margin-top:15px;
+        text-align: right;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        
+    }
+    .content-side h5 {
+        margin-top:15px;
+        text-align: right;
+        color: rgb(239, 124, 86);
+        text-transform: uppercase;
+    }
+    
+    .content-side p {
+        text-align: right;
+        font-size:smaller;
+        color: rgb(255, 255, 255);
+    }
+    span{
+        color: rgb(246, 128, 55);
+        
+    }
+    .content-side> p,h3{
+        font-size: 20px;
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        color: white;
+        flex-direction: column;
+        left: 50.8%;
+        gap: 40px;
+    }
+
+</style>
+
+<body>
+    <div class="container">
+       
+        <div class="content-side">
+            <h3>Our services  <span > |</span></h3><br><br>
+            <h5>Web design</h5>
+            <p>Your Lorem ipsum dolor, sit amet consectetur adipisicing elit repudiandae.
+            <p>
+                content goes here. This side will adjust screen.
+            </p>
+           
+            </p>
+            <h5>Print design</h5>
+            <p>Your Lorem ipsum dolor, sit amet consectetur adipisicing elit repudiandae.
+            <p>
+                content goes here. This side will adjust screen.
+            </p>
+            </p>
+            <h5>Photography</h5>
+            <p>Your Lorem ipsum dolor, sit amet consectetur adipisicing elit repudiandae.
+            <p>
+                content goes here. This side will adjust screen.
+            </p>
+            </p>
+        </div>
+
+        <div class="main"> 
+            <i class="fa-sharp fa-solid fa-computer"></i>
+            <i class="fa-sharp fa-solid fa-computer"></i>
+            <i class="fa-sharp fa-solid fa-computer"></i>
+        </div>
+        
+        <div class="image-side">
+            <img src="aerial-beautiful-shot-seashore-with-hills-background-sunset.jpg" alt="Image">
+        </div>
+    </div>
+</body>
+
+</html>
